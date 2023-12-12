@@ -1,0 +1,349 @@
+/* Estilos generales */
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Raleway:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --pwhite: #fcfcfc;
+  --white: #f0eaea;
+  --font: "Raleway", sans-serif;
+  --yellow: #f9e79f;
+  --dpurple: #af7ac5;
+  --lpurple: #d7bde2;
+  --black: #333;
+}
+
+body {
+  font-family: var(--font);
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  background: var(--white);
+}
+/* Estilos de la barra de desplazamiento */
+body::-webkit-scrollbar {
+  width: 8px; /* Ancho de la barra de desplazamiento */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(
+    --dpurple
+  ); /* Color del fondo del "pulgón" de la barra de desplazamiento */
+  border-radius: 8px; /* Redondea las esquinas del "pulgón" */
+}
+
+body::-webkit-scrollbar-track {
+  background-color: var(
+    --white
+  ); /* Color del fondo de la barra de desplazamiento */
+}
+.logo {
+  scale: 2;
+  transition: scale 0.3s ease, margin-bottom 0.3s ease;
+}
+
+.logo:hover {
+  scale: 2.04;
+}
+
+/* Estilos para el encabezado */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: var(--pwhite);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+  max-height: 40px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--yellow);
+}
+
+/* Estilos para las secciones */
+.hero-section,
+.benefits-section,
+.testimonials-section {
+  padding: 50px;
+  display: flex;
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: #ddd; /* Puedes cambiar este color por el que prefieras */
+}
+
+.hero-shot-container,
+.titles-container {
+  width: 50%;
+}
+
+.hero-shot-container {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-shot-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--lpurple) center/cover no-repeat; /* Ajusta la ruta de la imagen según tu estructura de carpetas */
+  filter: blur(100px);
+  z-index: -1;
+}
+
+.titles-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  margin-left: 20px;
+}
+
+.titles-container h1,
+.titles-container p {
+  transition: font-size 0.3s ease, margin-bottom 0.3s ease;
+}
+
+.titles-container h1 {
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 10px;
+}
+
+.titles-container p {
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--black);
+  margin-bottom: 20px;
+}
+
+/* Efecto gooey button */
+.gooey-btn {
+  display: inline-block;
+  text-align: center;
+  background: var(--white);
+  color: var(--dpurple);
+  font-weight: bold;
+  padding: 1.18em 1.32em 1.03em;
+  line-height: 1;
+  border-radius: 1em;
+  position: relative;
+  min-width: 8.23em;
+  text-decoration: none;
+  font-size: 1.6rem;
+  overflow: hidden;
+
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-radius 0.3s ease;
+}
+
+.gooey-btn:hover {
+  border: solid 2px var(--pwhite);
+  color: var(--white);
+  background: none;
+  border-radius: 16px;
+}
+/* FIn efecto gooey */
+
+.cta-btn:hover {
+  background-color: var(--lpurple);
+  color: var(--black);
+}
+
+/* Estilos para las tarjetas de beneficios y testimonios */
+.testimonials-container {
+  overflow-x: hidden;
+  white-space: nowrap;
+  display: flex;
+}
+
+.benefits-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* .benefit-card, */
+.testimonial-card {
+  width: calc(33.33% - 20px);
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  white-space: normal;
+}
+
+.benefit-card {
+  display: flex;
+  flex-direction: column;
+  height: calc(50% - 50px);
+  width: calc(30% - 45px);
+  margin-right: 2%;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.benefit-card:hover {
+  cursor: pointer;
+  background-color: var(--dpurple);
+}
+
+.benefit-card:hover svg {
+  fill: var(--white);
+}
+
+.benefit-card:hover p,
+.benefit-card:hover h {
+  color: var(--white);
+}
+
+/* Estilos para el footer */
+footer {
+  padding: 50px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+
+.about {
+  margin-bottom: 20px;
+}
+
+.about h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.about p {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.cta-btn {
+  padding: 15px 30px;
+  background-color: #c39bd3;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.section {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.background-svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(-1) translateY(0);
+  z-index: -1;
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+/* Estilos para la sección de testimonios y el carrusel */
+.testimonials-section {
+  padding: 50px;
+  text-align: center;
+}
+
+.testimonials-carousel {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  overflow: hidden;
+}
+
+.testimonial-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  width: 250px; /* Puedes ajustar este ancho según tus necesidades */
+  margin-right: 20px;
+  white-space: normal;
+}
+
+.testimonial-card img {
+  width: 100%;
+  border-radius: 50%; /* Para crear la imagen circular */
+  margin-bottom: 10px;
+}
+
+.testimonial-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.testimonial-comment {
+  font-style: italic;
+}
+/* Estilos para las flechas de navegación */
+/* Estilos para las flechas de navegación */
+.arrow {
+  position: absolute;
+  transform: translateY(100%);
+  font-size: 2.5rem;
+  cursor: pointer;
+  background: none;
+  color: var(--dpurple);
+  border-radius: 50%;
+  padding: 15px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all ease-in-out 0.3s;
+  line-height: 1; /* Ajusta el valor para centrar mejor el texto */
+  user-select: none; /* Evita la selección del texto */
+}
+
+.arrow:hover {
+  background: var(--dpurple);
+  color: var(--pwhite);
+}
+.arrow-left {
+  left: 10px;
+}
+
+.arrow-right {
+  right: 10px;
+}
