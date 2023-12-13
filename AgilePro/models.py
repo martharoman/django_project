@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Testimonios(models.Model):
-    nombre = models.CharField(max_length=50)
+    nombre = models.CharField(max_length=100)
     comentario = models.TextField()
     
     def __str__(self):
