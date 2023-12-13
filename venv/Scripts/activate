@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\Tetor\Desktop\coco\venv"
+VIRTUAL_ENV="C:\Users\yeste\OneDrive\Documentos\7MO CUATRI\coco\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
