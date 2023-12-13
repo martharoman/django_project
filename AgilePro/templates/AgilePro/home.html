@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link href="styles.css" rel="stylesheet" />
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"> -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'AgilePro/css/styles.css' %}">
+    <title>AgileProTrack</title>
   </head>
   <body>
     <header>
       <div class="logo">
-        <img src="img/AgileProTrack.png" alt="AgileProTrack" />
+        {% load static %}
+        <img src="{% static 'AgilePro/img/AgileProTrack.png' %}" alt="AgileProTrack" />
       </div>
       <nav>
         <ul>
@@ -56,9 +58,10 @@
       <!-- Fin del SVG -->
 
       <div class="hero-shot-container">
+        {% load static %}
         <img
         class="hero-shot-img"
-          src="img/LaptopHeroShotPurple.png"
+          src="{% static 'AgilePro/img/LaptopHeroShotPurple.png' %}"
           alt="AgileProTrack En Accion!"
         />
       </div>
@@ -209,10 +212,11 @@
         <h3>Acerca de</h3>
         <p>Descripción de la empresa y enlaces a redes sociales</p>
       </div>
-      <a href="#" class="cta-btn"
-        >Regístrate ahora y prueba AgileProTrack gratis</a
-      >
+      <a href="{% url 'login' %}" class="cta-btn">
+        Regístrate ahora y prueba AgileProTrack gratis
+      </a>
     </footer>
-    <script src="script.js"></script>
+    {% load static %}
+    <script src="{% static 'AgilePro/js/script.js' %}"></script>
   </body>
 </html>
