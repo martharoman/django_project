@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class CookyConfig(AppConfig):
+class AgileProConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'cooky'
+    name = 'AgilePro'
