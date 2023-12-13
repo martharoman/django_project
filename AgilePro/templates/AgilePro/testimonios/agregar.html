@@ -1,21 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'AgilePro/css/styles.css' %}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Agregar Testimonio</title>
 </head>
 <body>
+    <header>
+        <div class="logo">
+            {% load static %}
+            <img src="{% static 'AgilePro/img/AgileProTrack.png' %}" alt="AgileProTrack" />
+          </div>
+          <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Inicio</a></li>
+              <li><a href="{% url 'listado_testimonios' %}">Control de Testimonios</a></li>
+              <li><a href="{% url 'home' %}"">Cerrar Sesión</a></li>
+            </ul>
+          </nav>
+    </header>
     
-   <form action="" method="post">
+    <section style="text-align: center; margin-top: 3%;">
+      <h1>Agregar Testimonio</h1>
+      <form 
+      action="" method="post" enctype="multipart/form-data"
+      >
 
-    {% csrf_token %}
-    {{ form }}
+      {% csrf_token %}
+      {{ form }}
 
-    <input type="reset" value="cancelar">
-    <input type="submit" value="guardar">
+      <div style="margin-top: 1%;">
+        <input type="reset" class="cta-btn" value="Cancelar">
+        <input type="submit" class="cta-btn" value="Guardar">
+      </div>
 
-   </form> 
+    </form> 
+
+    {{mensaje}}
+    </section>
 
 </body>
 </html>

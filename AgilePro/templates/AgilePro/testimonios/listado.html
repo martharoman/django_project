@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'AgilePro/css/styles.css' %}">
+    <title>Listado de Testimonios</title>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            {% load static %}
+            <img src="{% static 'AgilePro/img/AgileProTrack.png' %}" alt="AgileProTrack" />
+          </div>
+          <nav>
+            <ul>
+              <li><a href="{% url 'home' %}">Inicio</a></li>
+              <li><a href="{% url 'agregar_testimonio' %}">Agregar</a></li>
+              <li><a href="{% url 'index' %}">Cerrar Sesión</a></li>
+            </ul>
+          </nav>
+    </header>
+    
+    <ul>
+    <table>
+        <tr>
+            <th><h2>Nombre</h2></th>
+            <th><h2>Comentario</h2></th>
+            <th><h2>Opciones</h2></th>
+        </tr>
+
+        {% for t in testimonios %}
+
+        <tr>
+            <th style="text-align: left;">{{ t.nombre | title }}</th>
+            <th style="text-align: left; align-items: center; width: 55%;">{{ t.comentario }}</th>
+            <th style="align-items: center;">
+                <a href="{% url 'editar_testimonio' t.id %}" style="text-decoration: none;">Editar</a>
+                <a href="{% url 'eliminar_testimonio' t.id %}" style="text-decoration: none;">Eliminar</a>
+            </th>
+        </tr>
+
+        {% endfor %}
+
+    </table>
+    </ul>
+    
+
+</body>
+</html>
